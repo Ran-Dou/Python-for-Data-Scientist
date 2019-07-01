@@ -156,15 +156,6 @@ for value in get_lengths(lannister):
 # its purpose is to ensure that resources are efficiently allocated when opening a connection to a file.
 # Open a connection to the file
 
-
-
-
-temp = pd.read_csv('world_ind_pop_data.csv')
-temp.readline()
-
-
-
-
 ### Example 1
 with open('world_ind_pop_data.csv') as file:
     # Skip the column names
@@ -281,7 +272,7 @@ for df_urb_pop in urb_pop_reader:
     df_pop_ceb['Total Urban Population'] = [int(tup[0] * tup[1] * 0.01) for tup in pops_list]
     # Append DataFrame chunk to data: data
     data = data.append(df_pop_ceb)
-# Plot urban population data
+# Plot urban population data 
 data.plot(kind='scatter', x='Year', y='Total Urban Population')
 plt.show()
 
@@ -314,7 +305,3 @@ fn = 'ind_pop_data.csv'
 plot_pop('ind_pop_data.csv', 'CEB')
 # Call plot_pop for country code 'ARB'
 plot_pop('ind_pop_data.csv', 'ARB')
-
-
-
-
