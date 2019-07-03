@@ -300,8 +300,8 @@ def plot_pop(filename, country_code):
     data.plot(kind='scatter', x='Year', y='Total Urban Population')
     plt.show()
 # Set the filename: fn
-fn = 'ind_pop_data.csv'
+fn = 'world_ind_pop_data.csv'
 # Call plot_pop for country code 'CEB'
-plot_pop('ind_pop_data.csv', 'CEB')
+plot_pop('world_ind_pop_data.csv', 'CEB')
 # Call plot_pop for country code 'ARB'
-plot_pop('ind_pop_data.csv', 'ARB')
+plot_pop('world_ind_pop_data.csv', 'ARB')
