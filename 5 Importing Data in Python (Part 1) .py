@@ -101,7 +101,14 @@ df2 = data.parse(0) # sheet index, as a float
 df2 = xls.parse(1, usecols=[0], skiprows=[0], names=['Country'])
 
 ### MATLAB files
-
+# 'Matrix Laboratory': industry standard in the disciplines of engineering and science
+# .mat
+import scipy.io
+# scipy.io.loadmat()  # read .mat files
+# scipy.io.savemat()  # write .mat files
+filename = 'ja_data2.mat'
+mat = scipy.io.loadmat(filename)
+print(type(mat))
 
 ### SAS files
 # 'Statistical Analysis System': business analytics and biostatistics
@@ -127,7 +134,31 @@ plt.ylabel('Number of countries')
 plt.show()
 
 ### HDF5 files
-
+# 'hierarchical Data Format version 5': storing largequantities of numerical data
+# Large files can be hundreds of gigabytes or even terabytes in size
+import h5py
+filename = 'L-L1_LOSC_4_V1-1126259446-32.hdf5'
+data = h5py.File(filename, 'r')     # 'r' is to read
+print(type(data))
+# Explore its hierarchical structure
+for key in data.keys():
+    print(key)  # each of the keys is a HDF group (like directory)
+for key in data['meta'].keys():
+    print(key)
+print(data['meta']['Description'].value, data['meta']['Detector'].value)
+# Example
+file = 'L-L1_LOSC_4_V1-1126259446-32.hdf5'
+data = h5py.File(file, 'r')
+group = data['strain']
+for key in group.keys():
+    print(key)
+strain = data['strain']['Strain'].value
+num_samples = 10000
+time = np.arange(0, 1, 1/num_samples)
+plt.plot(time, strain[:num_samples])
+plt.xlabel('GPS Time (s)')
+plt.ylabel('strain')
+plt.show()
 
 ### Pickled files
 # Pickled files are serialized
