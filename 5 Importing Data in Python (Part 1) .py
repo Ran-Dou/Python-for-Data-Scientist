@@ -31,6 +31,10 @@ with open('seaslug.txt') as file:
 ### Appendix
 # use '! ls' to check the contents of your current directory
 !ls
+# also import 'os' (operating system)
+import os
+wd = os.getcwd()
+os.listdir(wd)
 
 ### Flat Files
 # includes text files containing records
@@ -85,6 +89,57 @@ plt.show()
 # =============================================================================
 # IMPORT OTHER FILE TYPES
 # =============================================================================
+
+### Excel Spreadsheets
+import pandas as pd
+file = 'urbanpop.xlsx'
+data = pd.ExcelFile(file)
+print(data.sheet_names) #identify the sheets
+df1 = data.parse('1960-1966')   # sheet name, as a string
+df2 = data.parse(0) # sheet index, as a float
+# The values passed to skiprows, names, and usecols all need to be of type list.
+df2 = xls.parse(1, usecols=[0], skiprows=[0], names=['Country'])
+
+### MATLAB files
+
+
+### SAS files
+# 'Statistical Analysis System': business analytics and biostatistics
+# .sas7bdat (dataset files) / .sas7bcat (catalog files)
+import pandas as pd
+from sas7bdat import SAS7BDAT
+with SAS7BDAT('sales.sas7bdat') as file:
+    df_sas = file.to_data_frame()
+print(df_sas.head())
+pd.DataFrame.hist(df_sas[['P']])
+plt.ylabel('count')
+plt.show()
+
+### Stata files
+# 'Statistics + Data': academic social sciences research
+# .dta
+import pandas as pd
+df = pd.read_stata('disarea.dta')
+print(df.head())
+pd.DataFrame.hist(df[['disa10']])
+plt.xlabel('Extent of disease')
+plt.ylabel('Number of countries')
+plt.show()
+
+### HDF5 files
+
+
+### Pickled files
+# Pickled files are serialized
+# Serialize = convert object to btyestream
+import pickle
+with open('....pkl', 'rb') as file: #use 'rb' to specify read only and binary
+    data = pickle.load(file)
+# There are a number of datatypes that cannot be saved easily to flat files, such as lists and dictionaries.
+# If you want your files to be human readable, you may want to save them as text files in a clever manner. JSONs.
+# JSONs are appropriate for Python dictionaries.
+
+
 
 
 
