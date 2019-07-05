@@ -170,21 +170,57 @@ with open('....pkl', 'rb') as file: #use 'rb' to specify read only and binary
 # If you want your files to be human readable, you may want to save them as text files in a clever manner. JSONs.
 # JSONs are appropriate for Python dictionaries.
 
+# =============================================================================
+# Relational Databases
+# =============================================================================
 
+# based on relational model of data
+# Each row or record represents an instance of the entity type
+# Each column represents an attribute of each instance
+# Todd's 12 Rules/Commandments
+# Many packages: sqlite3, SQLAlchemy
+from sqlalchemy import create_engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+table_names = engine.table_names()  # return a list of table names
 
+### Workflow of SQL querying
+from sqlalchemy import create_engine
+import pandas as pd
+engine = create_engine('sqlite:///Chinook.sqlite')
+con = engine.connect()
+rs = con.execute('SELECT * FROM Album')
+df = pd.DataFrame(rs.fetchall())    # fetches all rows
+df.columns = rs.keys()
+con.close()
+print(df.head())
 
+# Avoid to close the connection, same as file
+with engine.connect() as con:
+    rs = con.execute('SELECT * FROM Employee WHERE EmployeeId >= 6')
+    df = pd.DataFrame(rs.fetchmany(size=5))   # imports 5 rows instead of all rows
+    df.columns = rs.keys()  
+print(len(df))
+print(df.head())
 
+# DO IT IN ONE LINE!
+engine = create_engine('sqlite:///Chinook.sqlite')
+df = pd.read_sql_query('SELECT * FROM Album', engine)
 
-
-
-
-
-
-
-
-
-
-
+# INNER JOIN in Python(pandas)
+from sqlalchemy import create_engine
+import pandas as pd
+engine = create_engine('sqlite:///Chinook.sqlite')
+df = pd.read_sql_query('SELECT * FROM Album', engine)
+print(df.head())
+# Example
+with engine.connect() as con:
+    rs = con.execute('SELECT Title, Name FROM Album INNER JOIN Artist ON Album.ArtistID = Artist.ArtistID')
+    df = pd.DataFrame(rs.fetchall())
+    df.columns = rs.keys()
+print(df.head())
+# Example
+df = pd.read_sql_query('SELECT * FROM PlaylistTrack INNER JOIN Track on PlaylistTrack.TrackId = Track.TrackId WHERE Milliseconds < 250000', engine)
+print(df.head())
 
 
 
