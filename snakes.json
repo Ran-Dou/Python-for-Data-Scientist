@@ -1,0 +1,554 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "3kew-745i",
+      "name" : "Snake Complete",
+      "averageRating" : 0,
+      "createdAt" : 1420237825,
+      "displayType" : "table",
+      "downloadCount" : 1106,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1423863258,
+      "moderationStatus" : true,
+      "newBackend" : true,
+      "numberOfComments" : 0,
+      "oid" : 10225704,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1423861290,
+      "publicationGroup" : 2054856,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1423861288,
+      "rowsUpdatedBy" : "fuyk-waw8",
+      "tableId" : 2252101,
+      "totalTimesRated" : 0,
+      "viewCount" : 109,
+      "viewLastModified" : 1423861290,
+      "viewType" : "tabular",
+      "approvals" : [ {
+        "reviewedAt" : 1423861290,
+        "reviewedAutomatically" : true,
+        "state" : "approved",
+        "submissionId" : 743914,
+        "submissionObject" : "public_audience_request",
+        "submissionOutcome" : "change_audience",
+        "submittedAt" : 1423861290,
+        "workflowId" : 2106,
+        "submissionDetails" : {
+          "permissionType" : "READ"
+        },
+        "submissionOutcomeApplication" : {
+          "failureCount" : 0,
+          "status" : "success"
+        },
+        "submitter" : {
+          "id" : "fuyk-waw8",
+          "displayName" : "Jennifer Johnson"
+        }
+      } ],
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 189248161,
+        "name" : "Region",
+        "dataTypeName" : "text",
+        "fieldName" : "region",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 23713768,
+        "width" : 172,
+        "cachedContents" : {
+          "non_null" : 8,
+          "largest" : "Snake",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Snake",
+            "count" : 20
+          } ],
+          "smallest" : "Snake"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248193,
+        "name" : "Year",
+        "dataTypeName" : "number",
+        "fieldName" : "year",
+        "position" : 3,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713769,
+        "width" : 148,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "2008.5",
+          "largest" : "2012",
+          "null" : 0,
+          "top" : [ {
+            "item" : "2005",
+            "count" : 20
+          }, {
+            "item" : "2006",
+            "count" : 19
+          }, {
+            "item" : "2007",
+            "count" : 18
+          }, {
+            "item" : "2008",
+            "count" : 17
+          }, {
+            "item" : "2009",
+            "count" : 16
+          }, {
+            "item" : "2010",
+            "count" : 15
+          }, {
+            "item" : "2011",
+            "count" : 14
+          }, {
+            "item" : "2012",
+            "count" : 13
+          } ],
+          "smallest" : "2005",
+          "sum" : "16068"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "true",
+          "align" : "right"
+        }
+      }, {
+        "id" : 189248194,
+        "name" : "Riparian Acres Treated",
+        "dataTypeName" : "number",
+        "fieldName" : "riparian_acres_treated",
+        "position" : 4,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713770,
+        "width" : 364,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "7.35375",
+          "largest" : "17.34",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "17.34",
+            "count" : 18
+          }, {
+            "item" : "3.3",
+            "count" : 17
+          }, {
+            "item" : "0.6",
+            "count" : 16
+          }, {
+            "item" : "16.8",
+            "count" : 15
+          }, {
+            "item" : "10.99",
+            "count" : 14
+          }, {
+            "item" : "6.8",
+            "count" : 13
+          } ],
+          "smallest" : "0",
+          "sum" : "58.83"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248195,
+        "name" : "Riparian Acre Projects",
+        "dataTypeName" : "number",
+        "fieldName" : "riparian_acre_projects",
+        "position" : 5,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713771,
+        "width" : 364,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "2.625",
+          "largest" : "6",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "1",
+            "count" : 19
+          }, {
+            "item" : "6",
+            "count" : 18
+          }, {
+            "item" : "4",
+            "count" : 17
+          }, {
+            "item" : "5",
+            "count" : 16
+          }, {
+            "item" : "3",
+            "count" : 15
+          } ],
+          "smallest" : "0",
+          "sum" : "21"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248196,
+        "name" : "Riparian Miles Treated",
+        "dataTypeName" : "number",
+        "fieldName" : "riparian_miles_treated",
+        "position" : 6,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713772,
+        "width" : 364,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "1.48875",
+          "largest" : "3.56",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "0.02",
+            "count" : 19
+          }, {
+            "item" : "2.23",
+            "count" : 18
+          }, {
+            "item" : "1.53",
+            "count" : 17
+          }, {
+            "item" : "0.18",
+            "count" : 16
+          }, {
+            "item" : "1.7",
+            "count" : 15
+          }, {
+            "item" : "2.69",
+            "count" : 14
+          }, {
+            "item" : "3.56",
+            "count" : 13
+          } ],
+          "smallest" : "0",
+          "sum" : "11.91"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248197,
+        "name" : "Riparian Mile Projects",
+        "dataTypeName" : "number",
+        "fieldName" : "riparian_mile_projects",
+        "position" : 7,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713773,
+        "width" : 364,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "2.375",
+          "largest" : "5",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "1",
+            "count" : 19
+          }, {
+            "item" : "3",
+            "count" : 18
+          }, {
+            "item" : "4",
+            "count" : 17
+          }, {
+            "item" : "5",
+            "count" : 16
+          } ],
+          "smallest" : "0",
+          "sum" : "19"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248198,
+        "name" : "Stream Miles Opened",
+        "dataTypeName" : "number",
+        "fieldName" : "stream_miles_opened",
+        "position" : 8,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713774,
+        "width" : 328,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "28.52625000000000",
+          "largest" : "69.5",
+          "null" : 0,
+          "top" : [ {
+            "item" : "36.700000000000003",
+            "count" : 20
+          }, {
+            "item" : "69.5",
+            "count" : 19
+          }, {
+            "item" : "22.9",
+            "count" : 18
+          }, {
+            "item" : "69.459999999999994",
+            "count" : 17
+          }, {
+            "item" : "3",
+            "count" : 16
+          }, {
+            "item" : "3.78",
+            "count" : 15
+          }, {
+            "item" : "22.87",
+            "count" : 14
+          }, {
+            "item" : "0",
+            "count" : 13
+          } ],
+          "smallest" : "0",
+          "sum" : "228.209999999999997"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248199,
+        "name" : "Stream Mile Projects",
+        "dataTypeName" : "number",
+        "fieldName" : "stream_mile_projects",
+        "position" : 9,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713775,
+        "width" : 340,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "3.5",
+          "largest" : "8",
+          "null" : 0,
+          "top" : [ {
+            "item" : "2",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "8",
+            "count" : 18
+          }, {
+            "item" : "7",
+            "count" : 17
+          }, {
+            "item" : "1",
+            "count" : 16
+          } ],
+          "smallest" : "1",
+          "sum" : "28"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248200,
+        "name" : "Barriers Removed/Altered",
+        "dataTypeName" : "number",
+        "fieldName" : "barriers_removed_altered",
+        "position" : 10,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713776,
+        "width" : 388,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "4.5",
+          "largest" : "10",
+          "null" : 0,
+          "top" : [ {
+            "item" : "6",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "4",
+            "count" : 18
+          }, {
+            "item" : "10",
+            "count" : 17
+          }, {
+            "item" : "1",
+            "count" : 16
+          }, {
+            "item" : "9",
+            "count" : 15
+          }, {
+            "item" : "0",
+            "count" : 14
+          } ],
+          "smallest" : "0",
+          "sum" : "36"
+        },
+        "format" : { }
+      }, {
+        "id" : 189248201,
+        "name" : "Barrier Projects",
+        "dataTypeName" : "number",
+        "fieldName" : "barrier_projects",
+        "position" : 11,
+        "renderTypeName" : "number",
+        "tableColumnId" : 23713777,
+        "width" : 292,
+        "cachedContents" : {
+          "non_null" : 8,
+          "average" : "3.625",
+          "largest" : "8",
+          "null" : 0,
+          "top" : [ {
+            "item" : "2",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "8",
+            "count" : 18
+          }, {
+            "item" : "7",
+            "count" : 17
+          }, {
+            "item" : "1",
+            "count" : 16
+          } ],
+          "smallest" : "1",
+          "sum" : "29"
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "custom_fields" : {
+          "Notes" : {
+            "1. " : "",
+            "2. " : "",
+            "3. " : "",
+            "4. " : "",
+            "5. " : "",
+            "6. " : ""
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        }
+      },
+      "owner" : {
+        "id" : "fuyk-waw8",
+        "displayName" : "Jennifer Johnson",
+        "profileImageUrlLarge" : "/api/users/fuyk-waw8/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/fuyk-waw8/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/fuyk-waw8/profile_images/TINY",
+        "screenName" : "Jennifer Johnson",
+        "type" : "interactive"
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "fuyk-waw8",
+        "displayName" : "Jennifer Johnson",
+        "profileImageUrlLarge" : "/api/users/fuyk-waw8/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/fuyk-waw8/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/fuyk-waw8/profile_images/TINY",
+        "screenName" : "Jennifer Johnson",
+        "type" : "interactive"
+      },
+      "tags" : [ "state-of-the-salmon" ],
+      "flags" : [ "default", "restorable", "restorePossibleForType" ]
+    }
+  },
+  "data" : [ [ "row-sjhz.if3t~j23b", "00000000-0000-0000-1A63-FA3A6983940C", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2005", "0", "0", "0", "0", "36.700000000000003", "2", "6", "2" ]
+, [ "row-edpn-5pua_zs5z", "00000000-0000-0000-4854-1CA7116B77A8", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2006", "3", "1", "0.02", "1", "69.5", "2", "3", "2" ]
+, [ "row-ebpw~t76j.w5ek", "00000000-0000-0000-42FF-234E25E1DA5D", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2007", "17.34", "6", "2.23", "3", "22.9", "3", "4", "3" ]
+, [ "row-rxp7_qbjp-dfbc", "00000000-0000-0000-FDC8-6B129AE5D783", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2008", "3.3", "1", "1.53", "1", "69.459999999999994", "8", "10", "8" ]
+, [ "row-k9b5~sh28.nmcq", "00000000-0000-0000-3AF4-99070E2BF071", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2009", "0.6", "1", "0.18", "1", "3", "2", "1", "3" ]
+, [ "row-49yy-sbnq-8xqa", "00000000-0000-0000-374D-34A623088C86", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2010", "16.8", "4", "1.7", "4", "3.78", "3", "9", "3" ]
+, [ "row-hrwq-hh5u_ijv3", "00000000-0000-0000-F849-A1213D28E711", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2011", "10.99", "5", "2.69", "5", "22.87", "7", "3", "7" ]
+, [ "row-pxaa_gsfw.bewr", "00000000-0000-0000-526E-0495F0564D4A", 0, 1424404368, null, 1424404368, null, "{ }", "Snake", "2012", "6.8", "3", "3.56", "4", "0", "1", "0", "1" ]
+ ]
+}

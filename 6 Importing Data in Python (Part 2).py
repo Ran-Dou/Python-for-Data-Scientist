@@ -1,5 +1,7 @@
 # How to import and use Python code to import and locally save datasets from the world wide web.
 # Reproducibility and Scalability
+import os
+os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-for-Data-Scientist')
 
 # =============================================================================
 # DATA FROM INTERNET
@@ -55,12 +57,37 @@ print(soup.get_text())
 for link in soup.find_all('a'):
     print(link.get('href'))
 
+# =============================================================================
+# APT
+# =============================================================================
 
+# Application Programming Interface: allows two software programs to communicate with each other
+# OMDb: Open Movie Database API
+# Twitter API
+# JSONs: JavaScript Object Notation
 
+### Import from local directory
+import json
+with open('snakes.json', 'r') as json_file:
+    json_data = json.load(json_file)
+type(json_data)
+for k in json_data.keys():
+    print(k + ': ', json_data[k])
 
-
-
-
+### Importing from other 
+import requests
+url = 'http://www.omdbapi.com/?apikey=72bc447a&t=the+social+network'
+r = requests.get(url)
+print(r.text)
+json_data = r.json()    # built-in JSON decoder when dealing with JSON data
+for k in json_data.keys():
+    print(k + ':' + json_data[k])
+# Example
+url = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=pizza'
+r = requests.get(url)
+json_data = r.json()
+pizza_extract = json_data['query']['pages']['24768']['extract']
+print(pizza_extract)
 
 
 
