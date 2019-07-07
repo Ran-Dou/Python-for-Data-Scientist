@@ -77,6 +77,32 @@ ebola_melt['type'] = ebola_melt['str_split'].str.get(0)
 ebola_melt['country'] = ebola_melt['str_split'].str.get(1)
 print(ebola_melt.head())
 
+# =============================================================================
+# COMBINGING DATA
+# =============================================================================
+
+### concatenate data
+# use ignore_index=True to reset index
+# use axis=1 to indicate column wise concatenate
+pd.concat([...,...], ignore_index=True, axis=1)
+# concatenating many files
+# Globbing: pattern matching for file names
+# Wildcards: * match all strings, ? match single character
+import glob
+csv_files = glob.glob('*.csv')
+print(csv_files)
+list_data = []
+for filename in csv_files:
+    data = pd.read_csv(filename)
+    list_data.append(data)
+pd.concat(list_data)
+
+### merging data
+pd.merge(left=..., right=..., on=None, left_on='...', right_on='name')
+df.head(20) #first 20 rows
+
+
+
 
 
 
