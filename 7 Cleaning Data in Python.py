@@ -101,6 +101,89 @@ pd.concat(list_data)
 pd.merge(left=..., right=..., on=None, left_on='...', right_on='name')
 df.head(20) #first 20 rows
 
+# =============================================================================
+# CLEANING DATA
+# =============================================================================
+
+### Convert datatype
+print(df.dtypes)    #get the data type of each column
+df['Zip'] = df['Zip'].astype(str)
+# converting categorical data to 'category' dtype can make the dataframe smaller in memory
+df.State = df.State.astype('category')
+df.Zip = pd.to_numeric(df.Zip, errors='coerce')  # if there is missing value
+
+### String Manipulation
+# re library for Regular Expressions
+# re library is used for string pattern matching
+import re
+# \d represent any digit
+# \d* represent zero or more times
+# $ represents the end of a string
+# \$\d* represents any digits follow a dollar sign
+# \$\d*\.\d{2} extention for 2 decimals digits
+# . the period matches any 1 character
+# ^...$ indicates the begining and the end of the value
+# Often first compile the pattern
+pattern = re.compile('\$\d*\.\d{2}')
+result = pattern.match('$17.89')    #return a match object
+bool(result)
+# find multiple values
+# + represents multiple times
+matches = re.findall('\d+', 'the recipe calls for 10 strawberries and 1 banana')
+print(matches)
+# Other examples
+pattern1 = bool(re.match(pattern='\d{3}-\d{3}-\d{4}', string='123-456-7890'))
+print(pattern1)
+pattern2 = bool(re.match(pattern='\$\d*\.\d{2}', string='$123.45'))
+print(pattern2)
+# [A-Z] represents any capital letters
+# \w* represents any letter
+pattern3 = bool(re.match(pattern='[A-Z]\w*', string='Australia'))
+print(pattern3)
+
+### Functions
+# cleaning step requires multiple steps
+df.apply(np.meam, axis=0, [additional function parameters])
+import re
+from numpy import Nan   # loading NaN missing value
+# Example 1
+def recode_gender(gender):
+    if gender == 'Male':
+        return 1
+    elif gender == 'Female':
+        return 0
+    else:
+        return np.nan
+tips['recode'] = tips.sex.apply(recode_gender)
+print(tips.head(5))
+# Example 2
+tips['total_dollar_replace'] = tips.total_dollar.apply(lambda x: x.replace('$', ''))
+tips['total_dollar_re'] = tips.total_dollar.apply(lambda x: re.findall('\d+\.\d+', x)[0])
+print(tips.head())
+
+### Dealing with duplicate or missing data
+df = df.drop_duplicates()
+print(df.info())
+df_dropped = df.dropna()
+df['Existing Height'] = df['Existing Height'].fillna('missing')
+df['Proposed Height'] = df['Proposed Height'].fillna(0)
+mean_value = df.Borough.mean()
+print(mean_value)
+df.Borough = df.Borough.fillna(meanvalue)
+
+### Testing
+# write assert statement to verify this
+assert 1 == 1
+assert 1 == 2   # Return error when False
+assert df['Non-Profit'].notnull().all()
+# chain two .all() methods (that is, .all().all()). The first .all() method will return a True or False for each column, while the second .all() method will return a single True or False.
+ebola = pd.read_csv('ebola.csv')
+assert ebola.notnull().all().all()
+assert (ebola >= 0).all().all()
+
+# =============================================================================
+# EXERCISE
+# =============================================================================
 
 
 
