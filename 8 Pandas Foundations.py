@@ -125,10 +125,23 @@ plt.show()
 # df.resample('D', 'W', '2W')      # 'D' stands for daily
 # common arguments: 'min'/'T'/'H'/'D'/'B'/'W'/'M'/'Q'/'A'
 # Upsampling: df.resample('4H').ffill()
+# df.resample('A').first().interpolate('linear')
 
 ### Rolling
 # To use the .rolling() method, you must always use method chaining, first calling .rolling() and then chaining an aggregation method after it.
 # smoothed = unsmoothed.rolling(window=24).mean()   # 24hr window
+
+# df.column.str.upper()
+# df.column.str.contains()
+# df.column.dt.hour
+# df.column.dt.tz_localize('US/Central').dt.tz_convert('US/Eastern')    # convert timezone
+
+# df.columns = df.columns.str.strip()   # strip extra whitespace
+# df.plot(style = 'k.-')        # color(k:black), marker(.:dot)
+# other color styles: b(blue) / g(green) / r(red) / c(cyan)
+# other marker styles: o(circle) / *(star) / s(square) / +(plus)
+# other line styles: :(dotted), -(dashed)
+
 
 
 
