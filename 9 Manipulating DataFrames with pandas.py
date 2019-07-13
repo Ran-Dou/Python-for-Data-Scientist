@@ -161,6 +161,78 @@ print(survived_mean_1)
 survived_mean_2 = titanic.groupby([under10, 'pclass'])['survived'].mean()
 print(survived_mean_2)
 
+# =============================================================================
+# CASE STUDY
+# =============================================================================
+
+medals = pd.read_csv('all_medalists.csv')
+USA_edition_grouped = medals.loc[medals.NOC == 'USA'].groupby('Edition')
+USA_edition_grouped['Medal'].count()
+country_names = medals.NOC
+medal_counts = country_names.value_counts()
+print(medal_counts.head(15))
+# Construct the pivot table: counted
+counted = medals.pivot_table(index='NOC', columns='Medal', values='Athlete', aggfunc='count')
+counted['totals'] = counted.sum(axis='columns')
+counted = counted.sort_values(by='totals', ascending=False)
+print(counted.head(15))
+
+ev_gen = medals.loc[:,['Event_gender','Gender']]
+# Drop duplicate pairs: ev_gen_uniques
+ev_gen_uniques = ev_gen.drop_duplicates()
+print(ev_gen_uniques)
+medals_by_gender = medals.groupby(['Event_gender','Gender'])
+medal_count_by_gender = medals_by_gender.count()
+print(medal_count_by_gender)
+
+# Create the Boolean Series: sus
+sus = (medals.Event_gender == 'W') & (medals.Gender == 'Men')
+suspect = medals[sus]
+print(suspect)
+
+### idxmax() / idxmin()
+# idxmax() return the row or column label where maximum value is located
+# idxmax() return the row or column label where minimum value is located
+# Given a categorical Series S, S.nunique() returns the number of distinct categories.
+country_grouped =medals.groupby('NOC')
+Nsports = country_grouped.Sport.nunique()
+Nsports = Nsports.sort_values(ascending=False)
+print(Nsports.head(15))
+during_cold_war = (medals.Edition >= 1952) & (medals.Edition <=1988)
+is_usa_urs = medals.NOC.isin(['USA','URS'])
+cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
+country_grouped = cold_war_medals.groupby('NOC')
+Nsports = country_grouped.Sport.nunique()
+print(Nsports)
+medals_won_by_country = medals.pivot_table(index='Edition', columns='NOC', values='Athlete', aggfunc='count')
+cold_war_usa_urs_medals = medals_won_by_country.loc[1952:1988, ['USA','URS']]
+most_medals = cold_war_usa_urs_medals.idxmax(axis='columns')
+print(most_medals.value_counts())
+
+# Ploting 1
+usa = medals[medals.NOC == 'USA']
+usa_medals_by_year = usa.groupby(['Edition', 'Medal'])['Athlete'].count()
+usa_medals_by_year = usa_medals_by_year.unstack()
+usa_medals_by_year.plot()
+plt.show()
+# Ploting 2
+usa = medals[medals.NOC == 'USA']
+usa_medals_by_year = usa.groupby(['Edition', 'Medal'])['Athlete'].count()
+usa_medals_by_year = usa_medals_by_year.unstack(level='Medal')
+usa_medals_by_year.plot.area()
+plt.show()
+# Ploting 3
+medals.Medal = pd.Categorical(values = medals.Medal, categories=['Bronze', 'Silver', 'Gold'], ordered=True)
+usa = medals[medals.NOC == 'USA']
+usa_medals_by_year = usa.groupby(['Edition', 'Medal'])['Athlete'].count()
+usa_medals_by_year = usa_medals_by_year.unstack(level='Medal')
+usa_medals_by_year.plot.area()
+plt.show()
+
+
+
+
+
 
 
 
