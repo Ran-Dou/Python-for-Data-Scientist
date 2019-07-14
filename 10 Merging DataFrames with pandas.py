@@ -42,6 +42,56 @@ print(dollars.head())
 pounds = dollars.multiply(exchange['GBP/USD'], axis='rows')
 print(pounds.head())
 
+# =============================================================================
+# APPENDING & CONCATENATING
+# =============================================================================
+
+# df.append(df2, ignore_index=True)
+# df.concat([...], ignore_index=True)  #multiple   #both row and columns
+# set axis=1 to concat, rows with same index join together
+
+# Example 1
+medal_types = ['bronze', 'silver', 'gold']
+medals =[]
+for medal in medal_types:
+    file_name = "%s_top5.csv" % medal
+    columns = ['Country', medal]
+    medal_df = pd.read_csv(file_name, header=0, index_col='Country', names=columns)
+    medals.append(medal_df)
+medals_df = pd.concat(medals, axis='columns')
+print(medals_df)
+
+# df.concat([...], keys=[...], axis=0)
+# df.concat([...], keys=[...], axis='columns')
+
+import numpy as np
+A = np.arange(8).reshape(2,4) + 0.1
+B = np.arange(6).reshape(2,3) + 0.2
+C = np.arange(12).reshape(3,4) + 0.3
+np.hstack([B,A])
+np.vstack([A,C])
+np.concatenate([B,A], axis=1)
+np.concatenate([A,C], axis=0)
+
+### Outer Join & Inner Join
+pd.concat([...], axis=1, join='inner')
+pd.concat([...], axis=1, join='outer')
+
+# =============================================================================
+# MERGING DATAFRAME
+# =============================================================================
+
+pd.merge(df1, df2)  #default by all columns
+pd.merge(df1, df2, on='...')
+pd.merge(df1, df2, left_on='...', right_on='...')
+pd.merge(df1, df2, on=['...', '...'], suffixes=['...', '...'])
+pd.merge(df1, df2, on=['...', '...'], suffixes=['...', '...'], how='left')
+df1.join(df2, how='left')
+
+# Occam's razor: use the simplest tool that works
+pd.merge_orderd(df1, df2, fill_method='ffill')   # index ordered alphabeticly
+
+
 
 
 
