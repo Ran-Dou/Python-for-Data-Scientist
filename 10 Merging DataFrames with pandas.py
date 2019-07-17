@@ -77,6 +77,7 @@ np.concatenate([A,C], axis=0)
 pd.concat([...], axis=1, join='inner')
 pd.concat([...], axis=1, join='outer')
 
+<<<<<<< HEAD
 # =============================================================================
 # MERGING DATAFRAME
 # =============================================================================
@@ -90,6 +91,14 @@ df1.join(df2, how='left')
 
 # Occam's razor: use the simplest tool that works
 pd.merge_orderd(df1, df2, fill_method='ffill')   # index ordered alphabeticly
+=======
+
+
+
+
+
+
+>>>>>>> master
 
 
 
