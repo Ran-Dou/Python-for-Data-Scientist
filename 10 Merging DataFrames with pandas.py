@@ -102,7 +102,8 @@ pd.merge_asof()
 # CASE STUDY
 # =============================================================================
 
-
+# Apply the expanding mean: mean_fractions
+mean_fractions = fractions.expanding().mean()
 
 
 
