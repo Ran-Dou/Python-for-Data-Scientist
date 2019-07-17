@@ -91,6 +91,12 @@ df1.join(df2, how='left')
 # Occam's razor: use the simplest tool that works
 pd.merge_orderd(df1, df2, fill_method='ffill')   # index ordered alphabeticly
 
+# Similar to pd.merge_ordered(), the pd.merge_asof() function will also merge
+# values in order using the on column, but for each row in the left DataFrame,
+# only rows from the right DataFrame whose 'on' column values are less than the
+# left value will be kept.
+pd.merge_asof()
+
 
 # =============================================================================
 # CASE STUDY
