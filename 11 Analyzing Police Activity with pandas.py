@@ -9,11 +9,16 @@ df.col1.str.cat(df.col2, sep=' ') # combine two columns
 df.col.dtype
 pd.to_datetime
 
+df.col.value_counts()  # counts unique values in a series
+df.col.value_counts(normalize=True)  # counts proportion in a series
 
+df.col.unique()
+df.groupby(['col1', 'col2']).function()
 
+# value_counts excludes missing value by default
+value_counts(dropna=False)
 
-
-
+df.col.str.contains('...', na=False)
 
 
 
