@@ -20,7 +20,8 @@ value_counts(dropna=False)
 
 df.col.str.contains('...', na=False)
 
-
+# datateime format series
+df.col.dt.month
 
 
 
