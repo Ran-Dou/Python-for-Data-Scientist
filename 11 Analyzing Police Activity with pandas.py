@@ -32,6 +32,22 @@ df.col.sort_values().plot(kind='barh')
 mapping = {'up':True, 'down':False} #ref:new
 df[col_new] = df.col_ref.map(mapping)
 df.col.unique()
+weather.TDIFF.plot(kind='hist', bins=20)
+
+# Category
+df.col.memory_usage(deep=True)
+cats=[...,...,...]
+df.col=df.col.astype('category', ordered=True, categories=cats)
+df.col.memory_usage(deep=True)  # check the memory usage again
+
+weather['bad_conditions'] = WT.sum(axis=1)
+# Replace missing values in 'bad_conditions' with '0'
+weather['bad_conditions'] = weather.bad_conditions.fillna(0).astype('int')
+
+# move index to column
+df.reset_index(inplace=True)
+
+
 
 
 
