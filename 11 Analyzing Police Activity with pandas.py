@@ -23,6 +23,16 @@ df.col.str.contains('...', na=False)
 # datateime format series
 df.col.dt.month
 
+pd.crosstab(col1, col2)
+k_zones.plot(kind='bar', stacked=True)
+df.col.sort_values().plot()
+df.col.sort_values().plot(kind='barh')
+
+
+mapping = {'up':True, 'down':False} #ref:new
+df[col_new] = df.col_ref.map(mapping)
+df.col.unique()
+
 
 
 
