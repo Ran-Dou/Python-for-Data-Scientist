@@ -63,10 +63,6 @@ plt.show()
 # PLOT 2D ARRAYS
 # =============================================================================
 
-# =============================================================================
-# PLOT 2D ARRAYS
-# =============================================================================
-
 import numpy as np
 # Slicing: slice = start:stop:stride
 u = np.linspace(-2, 2, 3)   #create a 1D array for uniformly spaced values
@@ -139,6 +135,87 @@ plt.imshow(rescaled_image)
 plt.show()
 plt.imshow(uneven, extent=(0,640,0,480))  #extent to the original size
 plt.savefig() #to export the image produced to a file.
+
+# =============================================================================
+# STATISTICAL PLOTS WITH SEABORNS
+# =============================================================================
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy
+import seaborn as sns
+
+tips = sns.load_dataset('tips')
+# plot groups in different color
+sns.lmplot(x = 'total_bill', y = 'tip', data = tips, hue='sex', palette='Set1')
+# plot groups in different plots
+sns.lmplot(x = 'total_bill', y = 'tip', data = tips, col='sex')
+# Residual plot
+sns.residplot(x='age', y='fare', data=df, color='indianred')
+# regplot()
+# A principal difference between sns.lmplot() and sns.regplot() is the way in which matplotlib options are passed (sns.regplot() is more permissive).
+# For both sns.lmplot() and sns.regplot(), the keyword order is used to control the order of polynomial regression.
+# The function sns.regplot() uses the argument scatter=None to prevent plotting the scatter plot points again.
+sns.regplot(x='weight', y='mpg', data=auto, color='green', scatter=None, label='order 2', order=2)
+
+### Univariate distribution
+# stripplot()
+sns.stripplot([x='day'], y='tip', data=tips)
+# spread out strip plots
+sns.tripplot(x='day', y='tip', data=tips, size=4, jitter=True)
+# swarm plot
+sns.swarmplot(x='day', y='tip', data=tips)
+sns.swarmplot(x='day', y='tip', data=tips, hue='sex')
+# interchange x y axis
+sns.swarmplot(x='tip', y='day', data=tips, hue='sex', orient='h')
+# box plot/ violin plot
+sns.boxplot(x='day', y='tip', data=tips)
+sns.violinplot(x='day', y='tip', data=tips)
+# combine plots
+sns.violinplot(x='day', y='tip', data=tips, inner=None, color='lightgray')
+sns.stripplot(x='day', y='tip', data=tips, size=4, jitter=True)
+
+### Multivariate distribution
+# joint plot
+# pearson correlation coefficient quantifies how strongly two variables are correlated
+# p-value tells the statistical significance of the difference of this value from 0.
+sns.jointplot(x='total_bill', y='tip', data=tips)
+# KDE: Kernel density estimation --> result in smooth contour plots and surfaces instead
+sns.jointplot(x='total_bill', y='tip', data=tips, kind='kde')
+#kind='scatter' uses a scatter plot of the data points
+#kind='reg' uses a regression plot (default order 1)
+#kind='resid' uses a residual plot
+#kind='kde' uses a kernel density estimate of the joint distribution
+#kind='hex' uses a hexbin plot of the joint distribution
+# pair plots
+sns.pairplot(tips)  # only use numerical columns
+# heatmap
+sns.heatmap(covariance)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
