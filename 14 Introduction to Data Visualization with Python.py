@@ -7,7 +7,8 @@ os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-f
 
 import matplotlib.pyplot as plt
 
-# Plotting ultiple graphs
+# Plotting multiple graphs
+# use plt.axes before the second plot
 plt.axes([x_lo, y_lo, width, height]) # figure units between 0 and 1
 plt.subplot()
 # before shwoing the figure, issuing tight_layout()
@@ -86,7 +87,7 @@ plt.contourf(Z, 9)  # provide filled contour plot
 
 # Visusulze bivariate distributions
 counts, bins, patches = plt.hist(X, bins=25)
-# more options for bins in 2d
+# more options for bins in 2di
 x = np.linspace(-4, 4, 99)
 y = np.linspace(-9, 9, 99)
 plt.hist2d(x,y,bins=(44,44), range=((8,48),(40,235)))
@@ -187,18 +188,41 @@ sns.jointplot(x='total_bill', y='tip', data=tips, kind='kde')
 #kind='resid' uses a residual plot
 #kind='kde' uses a kernel density estimate of the joint distribution
 #kind='hex' uses a hexbin plot of the joint distribution
-# pair plots
-sns.pairplot(tips)  # only use numerical columns
+ sns.pairplot(tips)  # only use numerical columns
 # heatmap
 sns.heatmap(covariance)
 
+# =============================================================================
+# ANALYZING TIME SERIES AND IMAGE
+# =============================================================================
 
+# make formatted labels based on datetime column
+labels = dates.strftime('%b %d')
+# moving window refers to a time interval in a time series over statistics
+# allow us to extract meaning on time scales longer than the measurement intervals
 
+# histogram equalization in image
+# One way to quantify low contrast in the original imgae: look at the histogram of the pixel intensities
+orig = plt.imread('low_contrast_moon.jpg')
+pixels = orig.flatten() #np.flatten: flatten a 2D array into a 1D array
+# check the original distribution
+plt.hist(pixels, bins=256, range=(0,256), normed=True, color='blue', alpha=0.3)
+minval, maxval = orig.min(), orig.max()
+rescaled = (255/(maxval-mival)) * (pixels-minval)
+# show the rescaled image
+plt.imshow(rescaled)
+plt.axis('off')
+# The CDF is needed to get our image sharper
+plt.twinx() #add a second vertical scale (place between the two plots)
+plt.hist(..., cumulative=True, ...)
+# get information on the CDF plot
+orig_cdf, bins, patches = plt.hist(pixels, cumulative=True, bins=256, range=(0,256), normed=True, color='red', alpha=0.3)
+new_pixels = np.interp(pixels, bins[:-1], orig_cdf*255)
+new = new_pixels.reshape(orig.shape)    # reshape back to 2D array
+plt.imshow(new)
 
-
-
-
-
+# little trick: check if a sequence 'xp' is increasing
+np.all(np.diff(xp) > 0)
 
 
 
