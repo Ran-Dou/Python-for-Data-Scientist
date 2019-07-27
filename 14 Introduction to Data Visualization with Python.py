@@ -63,6 +63,10 @@ plt.show()
 # PLOT 2D ARRAYS
 # =============================================================================
 
+# =============================================================================
+# PLOT 2D ARRAYS
+# =============================================================================
+
 import numpy as np
 # Slicing: slice = start:stop:stride
 u = np.linspace(-2, 2, 3)   #create a 1D array for uniformly spaced values
@@ -90,6 +94,7 @@ counts, bins, patches = plt.hist(X, bins=25)
 x = np.linspace(-4, 4, 99)
 y = np.linspace(-9, 9, 99)
 plt.hist2d(x,y,bins=(44,44), range=((8,48),(40,235)))
+plt.hist2d(x,y,bins=(44,44))
 plt.colorbar()
 # hexbin()
 plt.hexbin(x, y, gridsize=(15,10))
@@ -132,6 +137,9 @@ plt.title('rescaled image')
 plt.axis('off')
 plt.imshow(rescaled_image)
 plt.show()
+plt.imshow(uneven, extent=(0,640,0,480))  #extent to the original size
+plt.savefig() #to export the image produced to a file.
+
 
 
 
