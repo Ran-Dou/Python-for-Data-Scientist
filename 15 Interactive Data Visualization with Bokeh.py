@@ -101,6 +101,59 @@ show(plot)
 # add additional tool to an existing plot
 p.add_tools()
 
+# =============================================================================
+# LAYOUTS, INTERACTIONS, ANNOTATIONS
+# =============================================================================
+
+# arranging multiple plots
+from bokeh.layouts import row
+layout = row(p1, p2, p3)
+output_file('row.html')
+show(layout)
+from bokeh.layouts import column
+layout = column(p1, p2, p3)
+output_file('column.html')
+show(layout)
+
+# nested layouts
+layout = row(column(p1,p2),p3)
+
+### advanced layouts
+# gridplots
+from bokeh.layouts import gridplot
+# give a list of rows for layout
+layout = gridplot([[None, p1],[p2, p3]], toolbar_location=None)
+output_file('nested.html')
+show(layout)
+# By using the sizing_mode argument, you can scale the widths to fill the whole figure.
+
+# tabbed layouts
+from bokeh.models.widgets import Tabs, Panel
+# creat a panel with a title for each tab
+first = Panel(child=row(p1,p2), title='first')
+second = Panel(child=row(p3), title='second')
+# put panels in a tabs object
+tabs = Tabs(tabs = [first, second])
+output_file('tabbed.html')
+show(tabs)
+
+# linking plots together
+p3.x_range = p2.x_range = p1.x_range
+p3.y_range = p2.y_range = p1.y_range
+# linking selection
+# share the same data source 'source'
+# Legends
+plot.circle('petal_length', 'sepal_length', size=10, source=flowers,
+            color={'field':'species', 'transform':mapper}, legend='species')
+plot.legend.location='top_left'
+from bokeh.models import HoverTool
+hover = HoverTool(tooltips = [('species name', '@species'),
+                              ('petal length', '@petal_length'),
+                              ('sepal length', '@sepal_length')])
+plot = figure(tools=[hover, 'pan', 'wheel_zoom'])
+
+
+
 
 
 
