@@ -117,6 +117,8 @@ show(layout)
 
 # nested layouts
 layout = row(column(p1,p2),p3)
+# By using the sizing_mode argument, you can scale the widths to fill the whole figure.
+row2 = row([mpg_hp, mpg_weight], sizing_mode='scale_width')
 
 ### advanced layouts
 # gridplots
@@ -125,7 +127,6 @@ from bokeh.layouts import gridplot
 layout = gridplot([[None, p1],[p2, p3]], toolbar_location=None)
 output_file('nested.html')
 show(layout)
-# By using the sizing_mode argument, you can scale the widths to fill the whole figure.
 
 # tabbed layouts
 from bokeh.models.widgets import Tabs, Panel
@@ -151,12 +152,95 @@ hover = HoverTool(tooltips = [('species name', '@species'),
                               ('petal length', '@petal_length'),
                               ('sepal length', '@sepal_length')])
 plot = figure(tools=[hover, 'pan', 'wheel_zoom'])
+p.add_tools(hover)
 
+# =============================================================================
+# BUILD INTERACTIVE APPS WITH BOKEH
+# =============================================================================
 
+# Basic app outline
+from bokeh.io import curdoc
+# create plots and widgets
+# add callbacks
+# arrange plots and widgets in layouts
+curdoc.add_root(layout)
 
+# Run bokeh applications
+# Run single module apps at the shell or Windows command prompt:
+bokeh serve --show myapp.py
+# directory style apps run similarly
+bokeh serve --show myappdir/
+# or 
+bokeh serve script.py
 
+### Connecting sliders to plots
+from bokeh.io import curdoc
+from bokeh.plotting import figure
+from bokeh.models import ColumnDataSource, Slider
+from bokeh.layouts import column
+from numpy.random import random
+N = 300
+source = ColumnDataSource(data = {'x':random(N), 'y':random(N)})
+plot = figure()
+plot.circle('x', 'y', source = source)
+slider = Slider(start=100, end=1000, value=N, step=10, title='Number of points')
+# add call back to widgets
+# bokeh callback can be added to any property
+def callbak(attr, old, new):
+    # attribute want to change, old/new value
+    # don't have to change the name of the arguments
+    N = slider.value
+    source.data = {'x':random(N), 'y':random(N)}
+# change the slider using callback
+slider.on_change('value', callback)
+# arrange plots and widgets in layouts
+layout = column(slider, plot)
+# add the layout and all the contains to the current document
+curdoc().add_root(layout)
 
+### Updating plots from dropdowns
+from bokeh.io import curdoc
+from bokeh.plotting import figure
+from bokeh.models import ColumnDataSource, Select
+from bokeh.layouts import column
+from numpy.random import random, normal, lognormal
+N = 1000
+source = ColumnDataSource(data={'x':random(N), 'y':random(N)})
+plot = figure()
+plot.circle('x', 'y', source=source)
+menu = Select(options=['uniform', 'normal', 'lognormal'], value='uniform', title='Distribution')
+def callback(attr, old, new):
+    if menu.value == 'uniform': f = random
+    if menu.value == 'normal': f = normal
+    else: f = lognormal
+    source.data = {'x':f(size=N), 'y':f(size=N)}
+menu.on_change('value', callback)
+layout = column(menu, plot)
+curdoc.add_root(layout)
 
+### Buttons
+from bokeh.models import Button
+button = Button(label='press me')
+def update():
+    # do something interesting
+button.on_click(update)
+# other button options
+from bokeh.models import CheckboxGroup, RadioGroup, Toggle
+toggle = Toggle(label='Some on/off', button_type='success')
+checkbox = CheckboxGroup(labels=['foo','bar','baz'])
+radio = RadioGroup(labels=['2000', '2010'. '2020'])
+curdoc().add_root(widgetbox(toggle, checkbox, radio))
+def callback(active):
+    # Active tells which button is active
+
+### hosting applications for wider audiences
+
+### Exercises
+from bokeh.io import curdoc
+from bokeh.plotting import figure
+plot = figure()
+plot.line(x=[1,2,3,4,5], y=[2,5,4,6,7])
+curdoc().add_root(plot)
 
 
 
