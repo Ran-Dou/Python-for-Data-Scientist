@@ -25,7 +25,7 @@ year = [1950, 1970, 1990, 2010]
 pop = [2.519, 3.692, 5.263, 6.972]  #unit: billion
 col = ['green','yellow','red','blue']
 plt.scatter(year, pop, s = np.array(pop)**2, c = col, alpha = 0.8)  #plt.plot(x, y) #change size base on 'pop'
-plt.xlabel('Year')  #add label to x axis
+plt.xlabel('Year')  #add label to x axis 
 plt.ylabel('Population')  #add label to y axis
 plt.title('World Population Projections')  #add title to the plot
 plt.yticks([0, 2, 4, 6, 8, 10],['0', '2B', '4B', '6B', '8B', '10B'])  #change y ticks
