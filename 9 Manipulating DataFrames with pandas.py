@@ -7,7 +7,7 @@ os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-f
 
 import pandas as pd
 df = pd.read_csv('sales.csv', index_col='month')
-print(df)
+print(df) 
 # indexing
 print(df['salt']['Jan'])
 print(df.eggs['Mar'])
