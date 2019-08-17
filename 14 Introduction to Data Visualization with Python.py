@@ -27,7 +27,7 @@ plt.legend(loc='upper right')   #position of legend (9 positions + best + right)
 # Using annotate() for arrows
 plt.annotate(s='text', xy=(...,...), xytext=(...,...), arrowprops={'color':'green'})
 # switch styles globally with
-plt.style.use() # apply a style to a plot
+plt.style.use() # apply a style to a plot 
 plt.style.available     # check availibilities
 
 ### Example
