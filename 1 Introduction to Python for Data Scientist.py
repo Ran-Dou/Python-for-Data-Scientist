@@ -7,7 +7,7 @@
 
 #Addition, Subtraction, Multiplication, Division, Exponentiation, Modulo
 print(1+2)
-print(1-2)
+print(1-2) 
 print(1*2)
 print(1/2)
 print(4**2)
