@@ -13,7 +13,7 @@ print(df['salt']['Jan'])
 print(df.eggs['Mar'])
 print(df.loc['May', 'spam'])
 print(df.iloc[4, 2])
-print(df_new = df[['salt', 'eggs']])
+print(df_new = df[['salt', 'eggs']]) 
 # Series or Dataframe
 print(type(df['eggs']))    #Series
 print(type(df[['eggs']]))  #DataFrame
