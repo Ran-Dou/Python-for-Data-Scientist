@@ -131,6 +131,7 @@ str.upper()  #for string, capitalize all the letter
 str.count(sub[, start[, end]])  #for lists and string, count the number of sub-str/list
 #most lists methods will change the list they're called on
 list.append()  #adds an element to the list
+list.extend()
 list.remove()  #removes the first element of a list that matches the input
 list.reverse()  #reverses the order of the elements
 

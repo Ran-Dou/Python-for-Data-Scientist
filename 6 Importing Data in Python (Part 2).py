@@ -63,7 +63,7 @@ for link in soup.find_all('a'):
 
 # Application Programming Interface: allows two software programs to communicate with each other
 # OMDb: Open Movie Database API
-# Twitter API
+# Tweepy: Twitter API
 # JSONs: JavaScript Object Notation
 
 ### Import from local directory
@@ -141,7 +141,7 @@ print(df.head())
 import re
 def word_in_text(word, text):
     word = word.lower()
-    text = tweet.lower()
+    text = text.lower()
     match = re.search(word, text)
     if match:
         return True

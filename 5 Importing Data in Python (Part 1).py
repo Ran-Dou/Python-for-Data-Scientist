@@ -134,7 +134,7 @@ plt.ylabel('Number of countries')
 plt.show()
 
 ### HDF5 files
-# 'hierarchical Data Format version 5': storing largequantities of numerical data
+# 'hierarchical Data Format version 5': storing large quantities of numerical data
 # Large files can be hundreds of gigabytes or even terabytes in size
 import h5py
 filename = 'L-L1_LOSC_4_V1-1126259446-32.hdf5'
