@@ -102,7 +102,7 @@ img = plt.imread('....jpg')
 print(img.shape)    # return x, y, trailing dimension
 plt.imshow(img)
 plt.axis('off')
-# reduciton to gray_scale image
+# reduciton to gray_scale image 
 collapsed = img.mean(axis=2)    #average the RGB channel
 plt.set_cmap('gray')
 plt.imshow(collapsed, cmap='gray)

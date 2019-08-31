@@ -123,7 +123,7 @@ df.column.unique()
 df.column = df.column.astype('category')
 # Advanteges: less memory/ speed up operations like groupby()
 
-### Example
+### Example 
 titanic = pd.read_csv('titanic.csv')
 by_class = titanic.groupby('pclass')
 count_by_class = by_class.survived.count()
