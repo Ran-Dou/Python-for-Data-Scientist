@@ -71,7 +71,7 @@ C = np.arange(12).reshape(3,4) + 0.3
 np.hstack([B,A])
 np.vstack([A,C])
 np.concatenate([B,A], axis=1)
-np.concatenate([A,C], axis=0)
+np.concatenate([A,C], axis=0) 
 
 ### Outer Join & Inner Join
 pd.concat([...], axis=1, join='inner')
