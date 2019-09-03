@@ -10,7 +10,7 @@ print(1+2)
 print(1-2) 
 print(1*2)
 print(1/2)
-print(4**2)
+print(4**2) 
 print(8%7)
 
 ### Give object case specific sensitive name
