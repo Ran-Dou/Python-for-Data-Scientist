@@ -171,7 +171,7 @@ USA_edition_grouped['Medal'].count()
 country_names = medals.NOC
 medal_counts = country_names.value_counts()
 print(medal_counts.head(15))
-# Construct the pivot table: counted
+# Construct the pivot table: counted 
 counted = medals.pivot_table(index='NOC', columns='Medal', values='Athlete', aggfunc='count')
 counted['totals'] = counted.sum(axis='columns')
 counted = counted.sort_values(by='totals', ascending=False)
