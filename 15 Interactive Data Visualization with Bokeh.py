@@ -187,7 +187,7 @@ slider = Slider(start=100, end=1000, value=N, step=10, title='Number of points')
 # add call back to widgets
 # bokeh callback can be added to any property
 def callbak(attr, old, new):
-    # attribute want to change, old/new value
+    # attribute want to change, old/new value 
     # don't have to change the name of the arguments
     N = slider.value
     source.data = {'x':random(N), 'y':random(N)}
