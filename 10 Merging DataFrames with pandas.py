@@ -35,7 +35,7 @@ yearly['growth'] = yearly.pct_change() * 100
 print(yearly)
 
 # Example 2
-sp500 = pd.read_csv('sp500.csv', parse_dates=True, index_col='Date')
+sp500 = pd.read_csv('sp500.csv', parse_dates=True, index_col='Date') 
 exchange = pd.read_csv('exchange.csv', parse_dates=True, index_col='Date')
 dollars = sp500[['Open','Close']]
 print(dollars.head())
