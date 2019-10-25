@@ -8,7 +8,7 @@ os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-f
 import pandas as pd
 filenames = ['sales-jan-2015.csv', 'sales-feb-2015.csv']
 dataframes = []
-for f in filenames:
+for f in filenames: 
     dataframes.append(pd.read_csv(f))
 dataframes = [pd.read_csv(f) for f in filenames]
 
