@@ -3,7 +3,7 @@ os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-f
 
 # =============================================================================
 # ITERATORS
-# =============================================================================
+# ============================================================================= 
 
 # string, list, a range of objects, dictionaries, file connections
 # an object with an associated iter() method
