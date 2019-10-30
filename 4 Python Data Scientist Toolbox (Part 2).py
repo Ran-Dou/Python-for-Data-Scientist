@@ -10,7 +10,7 @@ os.chdir('/Users/randou/Esther/Coding/Python/Data Scientist with Python/Python-f
 # applying iter() to an iterable creates an iterator 
 
 ### Iterator
-# an iterable is an object that can return an iterator
+# an iterable is an object that can return an iterator 
 # an iterator is an object that keeps state and produces the next value when you call next() on it.
 # produces next value with next()
 word = 'Da'
